@@ -1,0 +1,42 @@
+import { Meta, Canvas, Story } from '@storybook/react';
+import { Input } from './Input'; // Assuming your Input component is imported here
+
+// Define some stories for the Input component
+const Basic = () => <Input type="text" />;
+const Email = () => <Input type="email" placeholder="Enter your email" />;
+const Password = () => <Input type="password" placeholder="Enter your password" />;
+
+// Define metadata for the component
+const meta: Meta<typeof Input> = {
+  title: 'Components/Input',
+  component: Input,
+  argTypes: {
+    type: { control: { type: 'select', options: ['text', 'email', 'password'] } },
+    className: { control: { type: 'text' } },
+  },
+};
+
+# Input Component
+
+An input field allows users to enter text data into a form. It's a versatile component widely used in various applications for user interaction.
+
+**Usage:**
+
+The `Input` component accepts several props:
+
+- **type:** [String] Specifies the input type (e.g., "text", "email", "password"). Defaults to "text".
+- **className:** [String] Optional class name to customize the input's appearance.
+
+**Examples:**
+
+* **Basic:** A simple text input field.
+<Canvas story={Basic} />
+
+* **Email Input:** An input field with a placeholder for email addresses.
+<Canvas story={Email} />
+
+* **Password Input:** An input field with a placeholder for passwords and hides the entered text (using dots).
+<Canvas story={Password} />
+
+* **Customizing Appearance:** You can add a custom class name to modify the styling of the input.
+

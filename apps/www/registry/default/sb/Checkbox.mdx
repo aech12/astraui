@@ -1,0 +1,23 @@
+import { Meta, Canvas, Story } from '@storybook/react';
+import { Checkbox } from './Checkbox';
+
+// Define the story
+const Default = () => <Checkbox />;
+
+// Define metadata for the component
+const meta = {
+  title: 'Components/Checkbox',
+  component: Checkbox,
+} satisfies Meta<typeof Checkbox>;
+
+# Checkbox Component
+
+The `Checkbox` component provides a visually appealing and interactive way for users to select one or more options from a set of choices.
+
+**Usage:**
+
+This component renders a checkbox with a checkmark icon. Use it within forms or lists to allow users to make selections.
+
+**Example:**
+
+<Canvas story={Default} />

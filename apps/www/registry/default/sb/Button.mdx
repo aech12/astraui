@@ -1,0 +1,48 @@
+import { Meta, Canvas, Story } from '@storybook/react';
+import { Button, buttonVariants } from './Button';
+
+// Define some stories for the Button component
+const Primary = () => <Button>Primary Button</Button>;
+const Destructive = () => <Button variant="destructive">Destructive Button</Button>;
+const Outline = () => <Button variant="outline">Outline Button</Button>; // Example
+
+// Define metadata for the component
+const meta: Meta<typeof Button> = {
+  title: 'Components/Button',
+  component: Button,
+  argTypes: {
+    variant: {
+      control: { type: 'select', options: Object.keys(buttonVariants.variants.variant) },
+    },
+    size: {
+      control: { type: 'select', options: Object.keys(buttonVariants.variants.size) },
+    },
+    asChild: { control: { type: 'boolean' } },
+  },
+};
+
+# Button Component
+
+The `Button` component is a versatile component for creating interactive buttons with various styles and behaviors.
+
+**Customization:**
+
+- **Variants:** Choose from different pre-defined variants like "default," "destructive," "outline," and more, each with unique visual styles. (See available variants in Storybook controls.)
+- **Sizes:** Adjust the button size using options like "default," "sm," "lg," and "icon." (See available sizes in Storybook controls.)
+
+**Additional Features:**
+
+- **`asChild` prop:** Controls the underlying HTML element. Set it to `true` to render the button as a `Slot` component (useful for customization within layout systems).
+
+**Examples:**
+
+* **Primary Button:** The default button style.
+<Canvas story={Primary} />
+
+* **Destructive Button:** A button with a destructive visual style.
+<Canvas story={Destructive} />
+
+* **Outline Button:** A button with an outlined border. (Example)
+<Canvas story={Outline} />
+
+**Storybook provides interactive controls to explore different variants and sizes.**
