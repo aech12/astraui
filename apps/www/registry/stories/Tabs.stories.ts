@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '../ui/tabs';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../default/ui/tabs';
 
 // Meta definition using satisfies
 const meta: Meta<typeof Tabs> = {
-  title: 'Components/Tabs',
   component: Tabs,
+  tags: ['autodocs'],
 } satisfies Meta<typeof Tabs>;
 
 export default meta;
@@ -13,8 +13,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => (<Tabs>
-    <TabsList>{ args.children } < /TabsList>
-    < TabsContent />
-    </Tabs>)
+  // render: () => (
+  //   <Tabs>
+  //   <TabsList>{ args.children } < /TabsList>
+  //   < TabsContent />
+  //   </Tabs>
+  //   )
 };
