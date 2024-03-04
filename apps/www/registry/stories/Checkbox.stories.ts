@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Checkbox } from '../ui/checkbox';
+import { Checkbox } from '../default/ui/checkbox';
 
 // Meta definition using satisfies
 const meta = {
@@ -12,5 +12,16 @@ export default meta;
 // Infer Story type from meta
 type Story = StoryObj<typeof meta>;
 
-// Story using satisfies
-export const Default = {} satisfies Story;
+export const Default = {
+  args: {
+    id: "checkbox"
+  }
+} satisfies Story;
+
+export const Disabled = {
+  args: {
+    id: "checkbox",
+    disabled: true
+  }
+} satisfies Story;
+

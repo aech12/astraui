@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Switch } from '../ui/switch';
+import { Switch } from '../default/ui/switch';
 
 // Meta definition using satisfies
 const meta: Meta<typeof Switch> = {
-  title: 'Components/Switch',
   component: Switch,
+  tags: ['autodocs'],
 } satisfies Meta<typeof Switch>;
 
 export default meta;
@@ -14,15 +14,13 @@ type Story = StoryObj<typeof meta>;
 
 // Stories using satisfies
 export const Default: Story = {
-  props: {
-    defaultChecked: false,
+  args: {
+    id: 'airplane-mode',
   },
+  // render: (args) => (
+  //   <div className="flex items-center space-x-2">
+  //     <Switch {...args} />
+  //     // <Label htmlFor="airplane-mode">Airplane Mode</Label>
+  //   </div>
+  // )
 };
-
-export const Checked: Story = {
-  props: {
-    defaultChecked: true,
-  },
-};
-
-// ... other stories
